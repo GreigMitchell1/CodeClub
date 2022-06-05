@@ -4,7 +4,7 @@ import time
 import subprocess
 #import keyboard
 
-MartyIP = "192.168.0.102" #example
+MartyIP = "192.168.0.101" #example
 
 #Test IP address of Marty is active and return response
 def martyalive():
