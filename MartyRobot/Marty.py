@@ -2,9 +2,9 @@ from martypy import Marty
 import os 
 import time
 import subprocess
-import keyboard
+#import keyboard
 
-MartyIP = "192.168.4.1" #example
+MartyIP = "192.168.0.102" #example
 
 #Test IP address of Marty is active and return response
 def martyalive():
@@ -31,7 +31,7 @@ def martycalibrate():
 
 #Make marty walk by # of steps, -ive values possible
 def martywalk(steps):
-  marty.walk(num_steps=steps, blocking=None)
+  marty.walk(num_steps=steps,)
 
 #Make marty kick with foot defined. Possible values of 'left' or 'right' 
 def martykick (foot):
@@ -75,7 +75,7 @@ def martylean (direction):
 
 #Open Marty Communication Socket on Defined IP address
 #TODO Dont think this is correct, only holding open for one job - is this a network comms issue?
-#marty=Marty('socket://'+ MartyIP, blocking=True)
+marty=Marty('socket://'+ MartyIP, blocking=True)
 
 #martycalibrate() ##TODO This does not work - breaks calibration!!
 martyalive()
