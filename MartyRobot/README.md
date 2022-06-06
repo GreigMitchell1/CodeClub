@@ -1,5 +1,5 @@
 #Marty the Robot - Sample Text
-##Oveview
+## Oveview
 Sample code for marty the robot, both in Python and Scratch
 ##Technical Overview
 ###Scratch
@@ -7,7 +7,6 @@ A Scratch .sb3 is included in the repository
 
 ###Python
 A more advanced implamention of the marty robot can be achived by Python.
-
 
 ##Network Setup
 ### Wireless Network
@@ -21,8 +20,11 @@ The marty robots function best as wireless clients, rather than hosts. In my tes
 | Marty | Mac Address | IP Address |
 | ----- | ----------- | ---------- |
 | 285 | B4:E6:2D:08:D2:ED | 192.168.0.101 |
-| 078 | tbd | 192.168.0.102 |
+| 078 | B4:E6:2D:08:CA:4E | 192.168.0.102 |
+| 982 | A0:20:A6:15:F5:06 | 192.168.0.103 | 
 
+### Raspberry Pi
+The Raspberry Pi running the sense hat is connected to the same Marty network on IP **192.168.0.50**. SSH access is enabled for user **greigmitchell**
 
 ##References
 - https://userguides.robotical.io/martyv2/documentation/python_function_reference
