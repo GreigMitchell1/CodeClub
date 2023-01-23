@@ -4,9 +4,10 @@ import time
 import subprocess
 #import keyboard
 
-Marty1 = "192.168.0.101" #example
-Marty2 = "192.168.0.102"
-Marty3 = "192.168.0.103"
+Marty1 = "192.168.8.243" #example
+Marty2 = "192.168.0.101"
+Marty3 = "192.168.0.107"
+Marty4 = "192.168.0.108"
 
 #Test IP address of Marty is active and return response
 def martyalive():
@@ -29,6 +30,7 @@ def martyhello():
   marty1.hello()
   marty2.hello()
   marty3.hello()
+  #marty4.hello()
   
 #Clear marty calibration details, and save new - DO NOT USE YET!
 def martycalibrate():
@@ -41,14 +43,18 @@ def martywalk(steps):
   marty1.walk(num_steps=steps)
   marty2.walk(num_steps=steps)
   marty3.walk(num_steps=steps)
+  marty4.walk(num_steps=steps)
 
 #Make marty kick with foot defined. Possible values of 'left' or 'right' 
 def martykick (foot):
-  marty2.kick(side=foot)
+  marty1.kick(side=foot)
 
 #Marty dance routine in time specified. Side is defined as start foot.
 def martydance ():
-  marty2.dance(side="right", move_time=5000)
+  marty1.dance(side="right", move_time=5000)
+  #marty2.dance(side="left", move_time=5000)
+  #marty3.dance(side="right", move_time=5000)
+  #marty4.dance(side="left", move_time=5000)
 
 #Wave marty arms back and forth. acceptable values between -100 and 100 in time specified.
 def martyarms ():
@@ -77,8 +83,8 @@ def martyturn (direction):
 #Play a sound from the internal marty speaker. Acceptable sound values of 20 - 20,000Hz. Maximum duration of 5000ms (5 Seconds)
 def martysound (): 
   marty1.play_sound(name_or_freq_start=200,freq_end=400,duration=5000)
-  marty2.play_sound(name_or_freq_start=400,freq_end=600,duration=5000)
-  marty3.play_sound(name_or_freq_start=600,freq_end=800,duration=5000)
+  #marty2.play_sound(name_or_freq_start=400,freq_end=600,duration=5000)
+  #marty3.play_sound(name_or_freq_start=600,freq_end=800,duration=5000)
 
 #Make marty lean in a specified direction. Choice of [left | right | forward | backward]
 def martylean (direction): 
@@ -87,20 +93,22 @@ def martylean (direction):
 #Open Marty Communication Socket on Defined IP address
 #TODO Dont think this is correct, only holding open for one job - is this a network comms issue?
 
-marty1=Marty('socket://192.168.0.101', blocking=True)
-marty2=Marty('socket://192.168.0.102', blocking=True)
-marty3=Marty('socket://192.168.0.103', blocking=True)
+marty1=Marty('socket://192.168.8.192', blocking=True)
+marty2=Marty('socket://192.168.0.101', blocking=True)
+#marty3=Marty('socket://192.168.0.107', blocking=True)
+#marty4=Marty('socket://192.168.0.108', blocking=True)
 
 #martycalibrate() ##TODO This does not work - breaks calibration!!
-martyalive()
+#martyalive()
 martyhello()
-martysound()
-martywalk(5)
-martyturn("right")
-martykick("left")
-martykick("right")
-martydance()
-martylean("forward")
-martylean("back")
-martyarms()
-martyeyes()
+#martyarms()
+#martysound()
+#martywalk(5)
+#martyturn("right")
+#martykick("left")
+#martykick("right")
+while 1==1:
+  martydance()
+#martylean("forward")
+#martylean("back")martyarms()
+#martyeyes()
